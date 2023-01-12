@@ -1,0 +1,50 @@
+### --TESTING-- Add bad food named fish
+POST localhost:8080/food
+Content-Type: application/json
+
+{
+  "type": "fish",
+  "date": "2016-01-25T19:30:00",
+  "supply": 5
+}
+### --TESTING-- Add good food to replace it
+POST localhost:8080/food
+Content-Type: application/json
+
+{
+  "type": "meat",
+  "date": "2016-01-25T19:30:00",
+  "supply": 15
+}
+### --TESTING Assign bad food to animal
+PUT localhost:8080/food/feed?foodId=255&animalId=411
+
+### (BUSINESS) Find spoiled food
+GET localhost:8080/food/bad_food?type=fish
+
+### (BUSINESS) Add new examination to those animals who eat bad food
+POST localhost:8080/examination
+Content-Type: application/json
+
+{
+  "date": "2016-02-01T19:30:00",
+  "weight": 6,
+  "status": "Bad"
+}
+
+### (BUSINESS) Assign new examinations to animals
+PUT localhost:8080/examination/set_animal?examId=1&animalId=1
+
+### (BUSINESS) Delete bad food
+DELETE localhost:8080/food?id=153
+
+### (BUSINESS) Add new food for animals
+PUT localhost:8080/food/feed?foodId=1&animalId=1
+
+### --TESTING-- Get animals who ate bad food to check if everything is correct
+GET localhost:8080/animal?id=410
+
+### --TESTING-- Check if bad food is no more available
+GET localhost:8080/food
+
+

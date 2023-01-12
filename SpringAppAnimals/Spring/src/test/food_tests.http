@@ -1,0 +1,31 @@
+### Post
+POST localhost:8080/food
+Content-Type: application/json
+
+{
+  "type": "meat",
+  "date": "2016-01-25T19:30:00",
+  "supply": 3
+}
+
+### Get food
+GET localhost:8080/food
+
+### Get one food
+GET localhost:8080/food?id=154
+
+### Put
+PUT localhost:8080/food?id=202
+Content-Type: application/json
+
+{
+  "type": "fish",
+  "date": "2016-01-25T19:30:00",
+  "supply": 155
+}
+
+### Delete
+DELETE localhost:8080/food?id=154
+
+### Feed animal
+PUT localhost:8080/food/feed?foodId=154&animalId=402

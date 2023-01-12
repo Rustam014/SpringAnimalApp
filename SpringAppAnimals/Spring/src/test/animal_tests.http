@@ -1,0 +1,29 @@
+### Post animal
+POST localhost:8080/animal
+Content-Type: application/json
+
+{
+  "name": "Jones",
+  "gender": "Female",
+  "birthday": "2016-01-25T19:30:00"
+}
+
+### Get animals
+
+GET localhost:8080/animal
+
+### Get one animal
+GET localhost:8080/animal?id=1
+
+### Put animal
+PUT localhost:8080/animal?id=102
+Content-Type: application/json
+
+{
+  "name": "Jones",
+  "gender": "Female",
+  "birthday": "2016-01-25T19:30:00"
+}
+
+### Delete animal
+DELETE localhost:8080/animal?id=402

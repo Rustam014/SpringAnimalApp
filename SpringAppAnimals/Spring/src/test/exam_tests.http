@@ -1,0 +1,32 @@
+### Post
+POST localhost:8080/examination
+Content-Type: application/json
+
+{
+  "date": "2016-01-25T19:30:00",
+  "weight": 6,
+  "status": "Good"
+}
+
+### Get examinations
+GET localhost:8080/examination
+
+### Get one examination
+GET localhost:8080/examination?id=1
+
+### Put
+PUT localhost:8080/examination?id=1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "date": "2016-01-25T19:30:00",
+  "weight": 6,
+  "status": "Bad"
+}
+
+### Delete
+DELETE localhost:8080/examination?id=4
+
+### Set examination to animal
+PUT localhost:8080/examination/set_animal?examId=1&animalId=1
